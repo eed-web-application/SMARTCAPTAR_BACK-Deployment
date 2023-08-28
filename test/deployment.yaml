@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: SMCAPTAR_FRONT
+  name: smartcaptar-back
   labels:
-    app: SMCAPTAR_FRONT
+    app: smartcaptar-back
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: SMCAPTAR_FRONT
+      app: smartcaptar-back
   template:
     metadata:
       labels:
-        app: SMCAPTAR_FRONT
+        app: smartcaptar-back
       annotations:
         prometheus.io/scrape: 'true'
         prometheus.io.scheme: 'http'
@@ -20,9 +20,9 @@ spec:
         prometheus.io/port: '8080'
     spec:
       containers:
-      - name: SMCAPTAR_FRONT
+      - name: smartcaptar-back
         imagePullPolicy: Always
-        image: ghcr.io/slaclab/smartcaptar_back:sha-39dece5
+        image: ghcr.io/slaclab/smartcaptar-back:sha-42db0ae
         envFrom:
         - configMapRef:
             name: env-config-map
@@ -33,4 +33,4 @@ spec:
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: gh-secret
+      - name: github-secret
