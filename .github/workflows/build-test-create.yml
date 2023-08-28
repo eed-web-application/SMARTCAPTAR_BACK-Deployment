@@ -42,7 +42,7 @@ jobs:
           labels: |
             maintainer=seano@slac.stanford.edu
       - name: Extract some files
-        run: 7z x instantclient_21_6.zip
+        run: 7z x client.zip
       - name: 'Create env file'
         run: |
           echo "${{ secrets.ENV_FILE }}" > .env
