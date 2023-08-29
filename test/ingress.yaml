@@ -12,7 +12,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /captar/api(/|$)(.*)
+        path: /api/captar(/|$)(.*)
         backend:
           service:
             name: smartcaptar-back-service
