@@ -45,7 +45,7 @@ jobs:
         run: 7z x client.zip
       - name: 'Create env file'
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
+          echo ${{ secrets.ENV_FILE }} > .env
       - name: Build and push Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
