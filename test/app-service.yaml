@@ -8,5 +8,5 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 1337
       targetPort: 1337
