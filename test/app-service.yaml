@@ -5,8 +5,10 @@ metadata:
 spec:
   selector:
     app: smartcaptar-back
+  type: LoadBalancer
   ports:
     - name: http
       protocol: TCP
-      port: 1337
+      port: 5000
       targetPort: 1337
+      nodePort: 31110
