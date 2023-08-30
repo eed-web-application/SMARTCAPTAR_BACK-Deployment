@@ -13,11 +13,6 @@ spec:
     metadata:
       labels:
         app: smartcaptar-back
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io.scheme: 'http'
-        prometheus.io/path: '/actuator/prometheus'
-        prometheus.io/port: '1337'
     spec:
       containers:
       - name: smartcaptar-back
