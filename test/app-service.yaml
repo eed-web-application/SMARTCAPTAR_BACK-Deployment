@@ -5,10 +5,18 @@ metadata:
 spec:
   selector:
     app: smartcaptar-back
-  type: LoadBalancer
   ports:
-    - name: http
+    - name: oracle-db
       protocol: TCP
-      port: 5000
-      targetPort: 1337
-      nodePort: 31110
+      port: 1521
+      targetPort: 1521
+      
+kind: Endpoints
+apiVersion: v1
+metadata:
+ name: dbdev
+subsets:
+ - addresses:
+     - ip: 172.23.97.145
+   ports:
+     - port: 1521
