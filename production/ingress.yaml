@@ -1,20 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: SMCAPTAR_FRONT-ingress
+  name: smartcaptar-back-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/whitelist-source-range: 134.79.0.0/16,172.16.0.0/12
   labels:
-    name: SMCAPTAR_FRONT-ingress
+    name: smartcaptar-back-ingress
 spec:
   rules:
-  - host: "eed-app.slac.stanford.edu"
+  - host: "accel-webapp.slac.stanford.edu"
     http:
       paths:
       - pathType: Prefix
-        path: /ejbe(/|$)(.*)
+        path: /api/smart-captar(/|$)(.*)
         backend:
           service:
-            name: SMCAPTAR_FRONT-service
+            name: smartcaptar-back-service
             port: 
-              number: 80
+              number: 1337
