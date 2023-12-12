@@ -1,2 +1,2 @@
-# eed-java-backend-example
-Deployment configuration for java backend
+# SMARRTCaptar backend deployment configurations
+Deployment configuration for smartcaptar-backend
