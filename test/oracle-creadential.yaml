@@ -3,7 +3,7 @@ kind: VaultSecret
 metadata:
   name: oracle-credential
 spec:
-  path: ad/accel-webapp-dev/smart-captar/oracle-credential
+  path: secret/ad/accel-webapp-dev/smart-captar/oracle-credential
   type: Opaque
   keys:
     - USER
