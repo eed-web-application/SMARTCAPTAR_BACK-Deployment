@@ -27,5 +27,13 @@ spec:
             cpu: "250m"
         ports:
         - containerPort: 1337
+        volumeMounts:
+          - mountPath: "/myapp/.env-oracle-credential"
+            name: oracle-credential
+            readOnly: true
       imagePullSecrets:
-      - name: github-secret
+        - name: github-secret
+      volumes:
+        - name: envfile
+          secret:
+            secretName: oracle-credential  

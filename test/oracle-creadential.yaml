@@ -1,0 +1,14 @@
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: oracle-credential
+spec:
+  path: ad/accel-webapp-dev/smart-captar/oracle-credential
+  type: Opaque
+  keys:
+    - USER
+    - PASSWORD
+  templates:
+    "env_oracle": |
+      USER="{% .Secrets.USER %}"
+      PASSWORD="{% .Secrets.PASSWORD %}"
