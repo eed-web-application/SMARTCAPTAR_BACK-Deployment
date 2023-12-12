@@ -7,3 +7,4 @@ resources:
 - env-config-map.yaml
 - docker-config-secrets.yaml
 - ingress.yaml
+- oracle-creadential.yaml
