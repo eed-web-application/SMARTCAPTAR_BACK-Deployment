@@ -29,7 +29,7 @@ spec:
         - containerPort: 1337
         volumeMounts:
           - mountPath: "/myapp/.env-oracle-credential"
-            name: oracle-credential
+            name: envfile
             readOnly: true
       imagePullSecrets:
         - name: github-secret
