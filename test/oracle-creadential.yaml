@@ -10,5 +10,5 @@ spec:
     - PASSWORD
   templates:
     ".env": |
-      USER="{% .Secrets.USER %}"
-      PASSWORD="{% .Secrets.PASSWORD %}"
+      USER={% .Secrets.USER %}
+      PASSWORD={% .Secrets.PASSWORD %}
