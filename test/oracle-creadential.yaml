@@ -9,6 +9,6 @@ spec:
     - USER
     - PASSWORD
   templates:
-    "env_oracle": |
+    ".env": |
       USER="{% .Secrets.USER %}"
       PASSWORD="{% .Secrets.PASSWORD %}"

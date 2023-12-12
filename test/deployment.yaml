@@ -28,7 +28,7 @@ spec:
         ports:
         - containerPort: 1337
         volumeMounts:
-          - mountPath: "/myapp/.env-oracle-credential"
+          - mountPath: "/tmp/env-oracle-credential"
             name: envfile
             readOnly: true
       imagePullSecrets:
