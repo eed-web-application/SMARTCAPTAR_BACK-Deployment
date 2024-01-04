@@ -4,4 +4,4 @@ metadata:
   name: env-config-map
 data:
   # property-like keys; each key maps to a simple value
-  ENV_NAME: value
+  ORACLE_CREDENTIAL_ENV: /tmp/env-oracle-credential/.env
