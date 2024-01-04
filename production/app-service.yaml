@@ -1,12 +1,39 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: SMCAPTAR_FRONT
+  name: smartcaptar-back
+  labels:
+    app: smartcaptar-back
 spec:
+  replicas: 1
   selector:
-    app: SMCAPTAR_FRONT
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 8080
+    matchLabels:
+      app: smartcaptar-back
+  template:
+    metadata:
+      labels:
+        app: smartcaptar-back
+    spec:
+      containers:
+      - name: smartcaptar-back
+        imagePullPolicy: Always
+        image: ghcr.io/eed-web-application/smartcaptar-back:sha-aa85cc5
+        envFrom:
+        - configMapRef:
+            name: env-config-map
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "250m"
+        ports:
+        - containerPort: 1337
+        volumeMounts:
+          - mountPath: "/tmp/env-oracle-credential"
+            name: envfile
+            readOnly: true
+      imagePullSecrets:
+        - name: github-secret
+      volumes:
+        - name: envfile
+          secret:
+            secretName: oracle-credential  
