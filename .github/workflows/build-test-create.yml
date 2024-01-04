@@ -60,4 +60,4 @@ jobs:
       - run: |
           gh workflow --repo slaclab/SMARTCAPTAR_BACK-Deployment run Deployment -f deployment_image="${{needs.build-docker-images.outputs.IMAGE_TO_DEPLOY}} "
         env:
-          GITHUB_TOKEN: ${{ secrets.TRIGGER_WORFLOW_SECRET}}
+          GITHUB_TOKEN: ${{ secrets.TRIGGER_WORKFLOW_SECRET}}
